@@ -23,6 +23,29 @@ class GetX{
             y = Math.Pow(xMax, 2);
             Console.WriteLine("x = {0}\t\t y = {1}",xMax, y);
         }
+
+        Console.WriteLine("Do you want to continue?(y/n): ");
+        string a = Console.ReadLine();
+        if (a == "y"){
+            GetY();
+        } else if (a == "n"){
+            Console.ReadKey();
+        } else Console.WriteLine("Incorrect value");
+
+    }
+    static void GetY(){
+        Console.WriteLine("\nEnter the first value of x: ");
+        string sx1 = Console.ReadLine();
+        Console.WriteLine("Enter the second value of x: ");
+        string sx2 = Console.ReadLine();
+
+        int x1 = Int32.Parse(sx1);
+        int x2 = int.Parse(sx2);
+        
+        double y = (5*Math.Sqrt(Math.Pow(x1, 3) + Math.Pow(x2, 5) - Math.Cos(x2)))/(Math.Sin(x1));
+        
+        Console.WriteLine(y);
+
         Console.ReadKey();
     }
 }
