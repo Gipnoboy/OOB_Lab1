@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Variant 19
+using System;
 class GetX{
     static void Main(){
         Console.WriteLine("Enter initial value of x: ");
@@ -14,15 +15,20 @@ class GetX{
         
         double x = xMin;
         double y;
+        double finalSumY = 0;
         while (x <= xMax){
             y = Math.Pow(x, 2);
+            finalSumY += y;
             Console.WriteLine("x = {0}\t\t y = {1}", x, y);
             x += dx;
         }
         if (Math.Abs (x - xMax - dx) > 0.0001){
             y = Math.Pow(xMax, 2);
+            finalSumY += y;
             Console.WriteLine("x = {0}\t\t y = {1}",xMax, y);
         }
+
+        Console.WriteLine("The sum of all Y = {0}", finalSumY);
 
         Console.WriteLine("Do you want to continue?(y/n): ");
         string a = Console.ReadLine();
